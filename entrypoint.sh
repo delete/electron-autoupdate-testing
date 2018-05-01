@@ -1,0 +1,1 @@
+./node_modules/.bin/build --win --ia32

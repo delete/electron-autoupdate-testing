@@ -1,0 +1,40 @@
+{
+  "name": "electron-quick-start",
+  "version": "1.0.3",
+  "description": "A minimal Electron application",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron .",
+    "build": "docker build -t electronupdate . && docker run --rm -v ${PWD}/dist:/project/dist electronupdate && sudo chown $USER:users dist/ -R"
+  },
+  "repository": "https://github.com/electron/electron-quick-start",
+  "keywords": [
+    "Electron",
+    "quick",
+    "start",
+    "tutorial",
+    "demo"
+  ],
+  "author": "GitHub",
+  "license": "CC0-1.0",
+  "devDependencies": {
+    "electron": "^1.8.4",
+    "electron-builder": "^20.11.1"
+  },
+  "dependencies": {
+    "electron-log": "^2.2.14",
+    "electron-updater": "^2.21.8"
+  },
+  "build": {
+    "publish": [
+      {
+        "provider": "generic",
+        "url": "http://192.168.1.154:8000/"
+      }
+    ],
+    "appId": "com.github.iffy.electronupdatergenericexample",
+    "nsis": {
+      "perMachine": true
+    }
+  }
+}
